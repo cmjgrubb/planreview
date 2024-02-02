@@ -167,21 +167,21 @@
 				</label>
 			</div>
 			<div class="inner_flexbox">
-				<ul>
-					<li>A copy of the recorded offsite FW easement(s) is/are required.</li>
-					<li>The easement document shall contain a plat and both shall be signed by FW.</li>
-					<li>FW requires specific language in its deed of easement.</li>
-					<li>
-						Visit our website (<a href="https://frederickwater.com">frederickwater.com</a>) to
-						obtain a copy of the form.
-					</li>
-					<li>
-						A copy of the recorded deed(s) of easement is required before work is to begin on
-						offsite property.
-					</li>
-				</ul>
+				<p>A copy of the recorded offsite FW easement(s) is/are required.</p>
 			</div>
 		</div>
+		<ul>
+			<li>The easement document shall contain a plat and both shall be signed by FW.</li>
+			<li>FW requires specific language in its deed of easement.</li>
+			<li>
+				Visit our website (<a href="https://frederickwater.com">frederickwater.com</a>) to obtain a
+				copy of the form.
+			</li>
+			<li>
+				A copy of the recorded deed(s) of easement is required before work is to begin on offsite
+				property.
+			</li>
+		</ul>
 
 		<h2>Other</h2>
 		<div class="outer_flexbox">
