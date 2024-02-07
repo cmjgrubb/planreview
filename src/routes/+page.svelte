@@ -58,10 +58,11 @@
 
 <div class="print-container">
 	<form on:submit|preventDefault={handle_submit}>
-		<div class="outer_flexbox">
-			<div class="inner_flexbox">
+		<div class="name">
+			<div>
 				<label for="project">Project: </label>
 				<input
+					class="name_text"
 					type="text"
 					id="project"
 					name="project"
@@ -70,9 +71,10 @@
 				/>
 			</div>
 
-			<div class="inner_flexbox">
+			<div>
 				<label for="Applicant">Applicant: </label>
 				<input
+					class="name_text"
 					type="text"
 					id="Applicant"
 					name="Applicant"
@@ -81,9 +83,10 @@
 				/>
 			</div>
 
-			<div class="inner_flexbox">
+			<div>
 				<label for="Attention">Attention: </label>
 				<input
+					class="name_text"
 					type="text"
 					id="Attention"
 					name="Attention"
@@ -227,8 +230,8 @@
 			</div>
 			<div class="inner_flexbox">
 				<p>
-					This project requires VDH &ndash; Culpeper Field Office &ndash; Project Summary Report<i>
-						by date for drawings above</i
+					This project requires VDH &ndash; Culpeper Field Office &ndash; Project Summary Report <strong
+						><u>by date for drawings above</u></strong
 					> (see website for form).
 				</p>
 			</div>
@@ -313,6 +316,14 @@
 		margin-top: 0px;
 	}
 
+	.name {
+		line-height: 3;
+	}
+
+	.name_text {
+		width: 600px;
+	}
+
 	.warning {
 		color: red;
 		margin-top: 10px;
@@ -331,7 +342,7 @@
 		}
 
 		.print-container {
-			height: 20cm; /* A4 height */
+			height: 21cm; /* A4 height */
 			width: 21cm; /* A4 width */
 			overflow: hidden;
 			margin: 0;
