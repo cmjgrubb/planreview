@@ -57,6 +57,6 @@
 		border-bottom: 5px solid #c0da2f;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 	}
 </style>

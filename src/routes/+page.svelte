@@ -107,7 +107,7 @@
 		<h2>Review Status</h2>
 
 		<div class="outer_flexbox">
-			<div class="inner_flexbox">
+			<div class="inner_flexbox" style="margin-right: 60px;">
 				<label for="Review_Number">Review Number: </label>
 				<input
 					class="number_text"
@@ -118,7 +118,7 @@
 				/>
 			</div>
 
-			<div class="inner_flexbox">
+			<div class="inner_flexbox" style="margin-right: 60px;">
 				<label>
 					<input type="radio" bind:group={approval_status} value="correct" />
 					Correct & Resubmit
@@ -146,12 +146,12 @@
 			</div>
 		</div>
 		<br />
-		<div style="display: flex; flex-direction: column;">
+		<div style="display: flex; flex-direction: column; margin-top: -10px;">
 			<label for="Comments" style="order: 1;">Comments: </label>
 			<textarea
 				id="Comments"
 				name="Comments"
-				rows="4"
+				rows="6"
 				cols="50"
 				bind:value={comments}
 				style="order: 2;"
@@ -159,8 +159,8 @@
 		</div>
 
 		<h2>Drawings</h2>
-		<div class="flex-container">
-			<div class="deadline-input">
+		<div class="flex_container">
+			<div class="deadline_input">
 				<label for="Deadline">Not later than</label>
 				<input
 					class="date_text"
@@ -170,7 +170,7 @@
 					placeholder={formatted_deadline}
 				/>
 			</div>
-			<div class="radio-inputs">
+			<div class="drawings_radio_inputs">
 				<div class="outer_flexbox">
 					<div class="inner_flexbox">
 						<label>
@@ -209,49 +209,56 @@
 		</div>
 
 		<h2>Easements</h2>
-		<div class="outer_flexbox">
-			<div class="inner_flexbox">
-				<label>
-					<input type="radio" bind:group={onsite_easement} value={true} />
-					Y
-				</label>
-				<label>
-					<input type="radio" bind:group={onsite_easement} value={false} />
-					N
-				</label>
-			</div>
-			<div class="inner_flexbox">
-				<p>A copy of the recorded onsite Frederick Water (FW) easement(s) is/are required.</p>
-			</div>
-		</div>
+		<div class="flex_container">
+			<div class="easements_radio_inputs">
+				<div class="outer_flexbox">
+					<div class="inner_flexbox">
+						<label>
+							<input type="radio" bind:group={onsite_easement} value={true} />
+							Y
+						</label>
+						<label>
+							<input type="radio" bind:group={onsite_easement} value={false} />
+							N
+						</label>
+					</div>
+					<div class="inner_flexbox">
+						<p>A copy of the recorded onsite Frederick Water (FW) easement(s) is/are required.</p>
+					</div>
+				</div>
 
-		<div class="outer_flexbox">
-			<div class="inner_flexbox">
-				<label>
-					<input type="radio" bind:group={offsite_easement} value={true} />
-					Y
-				</label>
-				<label>
-					<input type="radio" bind:group={offsite_easement} value={false} />
-					N
-				</label>
+				<div class="outer_flexbox">
+					<div class="inner_flexbox">
+						<label>
+							<input type="radio" bind:group={offsite_easement} value={true} />
+							Y
+						</label>
+						<label>
+							<input type="radio" bind:group={offsite_easement} value={false} />
+							N
+						</label>
+					</div>
+					<div class="inner_flexbox">
+						<p>A copy of the recorded offsite FW easement(s) is/are required.</p>
+					</div>
+				</div>
 			</div>
-			<div class="inner_flexbox">
-				<p>A copy of the recorded offsite FW easement(s) is/are required.</p>
+
+			<div class="easements_ul">
+				<ul>
+					<li>The easement document shall contain a plat and both shall be signed by FW.</li>
+					<li>FW requires specific language in its deed of easement.</li>
+					<li>
+						Visit our website (<a href="https://frederickwater.com">frederickwater.com</a>) to
+						obtain a copy of the form.
+					</li>
+					<li>
+						A copy of the recorded deed(s) of easement is required before work is to begin on
+						offsite property.
+					</li>
+				</ul>
 			</div>
 		</div>
-		<ul>
-			<li>The easement document shall contain a plat and both shall be signed by FW.</li>
-			<li>FW requires specific language in its deed of easement.</li>
-			<li>
-				Visit our website (<a href="https://frederickwater.com">frederickwater.com</a>) to obtain a
-				copy of the form.
-			</li>
-			<li>
-				A copy of the recorded deed(s) of easement is required before work is to begin on offsite
-				property.
-			</li>
-		</ul>
 
 		<h2>Other</h2>
 		<div class="outer_flexbox">
@@ -345,8 +352,8 @@
 	:global(body) {
 		font-family: Arial, sans-serif;
 		font-size: 12px;
-		margin: 2rem;
-		padding: 1rem;
+		margin: 1.5rem;
+		padding: 0rem;
 		line-height: 2;
 	}
 
@@ -360,10 +367,19 @@
 
 	h2 {
 		font-size: 14px;
+		margin-top: 1rem;
+		margin-bottom: 0px;
+	}
+
+	input {
+		height: 13px;
+		margin: 0px;
+		margin-left: 8px;
+		font-size: 12px;
 	}
 
 	ul {
-		margin-top: 0px;
+		margin: 0px;
 	}
 
 	.outer_flexbox {
@@ -371,12 +387,13 @@
 	}
 
 	.inner_flexbox {
-		margin-right: 2rem;
-		max-width: 80%;
+		margin: 0px;
+		margin-right: 1rem;
+		max-width: 75%;
 	}
 
 	.inner_flexbox p {
-		margin-top: 0px;
+		margin: 0px;
 	}
 
 	.name {
@@ -397,21 +414,30 @@
 
 	.warning {
 		color: red;
-		margin-top: 10px;
-		margin-bottom: 30px;
+		margin-top: 2rem;
+		margin-bottom: 2.5rem;
+		font-size: 12px;
 	}
 
-	.flex-container {
+	.flex_container {
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 	}
 
-	.deadline-input {
+	.deadline_input {
 		width: 20%;
 	}
 
-	.radio-inputs {
+	.drawings_radio_inputs {
 		width: 80%;
+	}
+
+	.easements_radio_inputs {
+		width: 55%;
+	}
+
+	.easements_ul {
+		width: 45%;
 	}
 
 	@media print {
@@ -429,7 +455,7 @@
 			height: 21cm; /* A4 height */
 			width: 21cm; /* A4 width */
 			overflow: hidden;
-			margin: 0;
+			margin: -1.5rem;
 			padding: 0;
 			box-sizing: border-box;
 		}
