@@ -4,11 +4,15 @@
 	let attention: string = '';
 	let review_number: string = '';
 	let approval_status: string = '';
+	let no_corrected: string = '';
+	let comments: string = '';
 	let today = new Date();
 	let deadline = new Date();
 	deadline.setDate(today.getDate() + 21);
 	let formatted_today = today.toLocaleDateString();
 	let formatted_deadline = deadline.toLocaleDateString();
+	let hard_copy: Boolean = true;
+	let digital_copy: Boolean = true;
 	let onsite_easement: Boolean | null = null;
 	let offsite_easement: Boolean | null = null;
 	let deq_approval: Boolean | null = null;
@@ -42,11 +46,15 @@
 		attention = '';
 		review_number = '';
 		approval_status = '';
+		no_corrected = '';
+		comments = '';
 		today = new Date();
 		deadline = new Date();
 		deadline.setDate(deadline.getDate() + 21);
 		formatted_today = today.toLocaleDateString();
 		formatted_deadline = deadline.toLocaleDateString();
+		hard_copy = true;
+		digital_copy = true;
 		onsite_easement = null;
 		offsite_easement = null;
 		deq_approval = null;
@@ -101,7 +109,13 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label for="Review_Number">Review Number: </label>
-				<input type="text" id="Review_Number" name="Review_Number" bind:value={review_number} />
+				<input
+					class="number_text"
+					type="text"
+					id="Review_Number"
+					name="Review_Number"
+					bind:value={review_number}
+				/>
 			</div>
 
 			<div class="inner_flexbox">
@@ -120,24 +134,77 @@
 					Approved
 				</label>
 			</div>
+			<div class="inner_flexbox">
+				<label for="No_Corrected">Number of Corrections: </label>
+				<input
+					class="number_text"
+					type="text"
+					id="No_Corrected"
+					name="No_Corrected"
+					bind:value={no_corrected}
+				/>
+			</div>
+		</div>
+		<br />
+		<div style="display: flex; flex-direction: column;">
+			<label for="Comments" style="order: 1;">Comments: </label>
+			<textarea
+				id="Comments"
+				name="Comments"
+				rows="4"
+				cols="50"
+				bind:value={comments}
+				style="order: 2;"
+			/>
 		</div>
 
 		<h2>Drawings</h2>
-		<div class="outer_flexbox">
-			<div class="inner_flexbox">
+		<div class="flex-container">
+			<div class="deadline-input">
 				<label for="Deadline">Not later than</label>
-				<input type="text" id="Deadline" name="Deadline" placeholder={formatted_deadline} />
+				<input
+					class="date_text"
+					type="text"
+					id="Deadline"
+					name="Deadline"
+					placeholder={formatted_deadline}
+				/>
 			</div>
-
-			<div class="inner_flexbox">
-				<ol>
-					<li>Hard copy of the entire approved plan set to the address above.</li>
-					<li>
-						A digital copy of the entire approved plan set as a multi-page PDF to <a
-							href="mailto:admin@frederickwater.com">admin@frederickwater.com</a
-						>.
-					</li>
-				</ol>
+			<div class="radio-inputs">
+				<div class="outer_flexbox">
+					<div class="inner_flexbox">
+						<label>
+							<input type="radio" bind:group={hard_copy} value={true} />
+							Y
+						</label>
+						<label>
+							<input type="radio" bind:group={hard_copy} value={false} />
+							N
+						</label>
+					</div>
+					<div class="inner_flexbox">
+						<p>Hard copy of the entire approved plan set to the address above.</p>
+					</div>
+				</div>
+				<div class="outer_flexbox">
+					<div class="inner_flexbox">
+						<label>
+							<input type="radio" bind:group={digital_copy} value={true} />
+							Y
+						</label>
+						<label>
+							<input type="radio" bind:group={digital_copy} value={false} />
+							N
+						</label>
+					</div>
+					<div class="inner_flexbox">
+						<p>
+							A digital copy of the entire approved plan set as a multi-page PDF to <a
+								href="mailto:admin@frederickwater.com">admin@frederickwater.com</a
+							>.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -145,11 +212,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={onsite_easement} value="true" />
+					<input type="radio" bind:group={onsite_easement} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={onsite_easement} value="false" />
+					<input type="radio" bind:group={onsite_easement} value={false} />
 					N
 				</label>
 			</div>
@@ -161,11 +228,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={offsite_easement} value="true" />
+					<input type="radio" bind:group={offsite_easement} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={offsite_easement} value="false" />
+					<input type="radio" bind:group={offsite_easement} value={false} />
 					N
 				</label>
 			</div>
@@ -190,11 +257,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={deq_approval} value="true" />
+					<input type="radio" bind:group={deq_approval} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={deq_approval} value="false" />
+					<input type="radio" bind:group={deq_approval} value={false} />
 					N
 				</label>
 			</div>
@@ -205,11 +272,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={vdh_approval} value="true" />
+					<input type="radio" bind:group={vdh_approval} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={vdh_approval} value="false" />
+					<input type="radio" bind:group={vdh_approval} value={false} />
 					N
 				</label>
 			</div>
@@ -220,11 +287,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={vdh_report} value="true" />
+					<input type="radio" bind:group={vdh_report} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={vdh_report} value="false" />
+					<input type="radio" bind:group={vdh_report} value={false} />
 					N
 				</label>
 			</div>
@@ -239,11 +306,11 @@
 		<div class="outer_flexbox">
 			<div class="inner_flexbox">
 				<label>
-					<input type="radio" bind:group={pump_station} value="true" />
+					<input type="radio" bind:group={pump_station} value={true} />
 					Y
 				</label>
 				<label>
-					<input type="radio" bind:group={pump_station} value="false" />
+					<input type="radio" bind:group={pump_station} value={false} />
 					N
 				</label>
 			</div>
@@ -295,10 +362,6 @@
 		font-size: 14px;
 	}
 
-	ol {
-		margin-top: 0px;
-	}
-
 	ul {
 		margin-top: 0px;
 	}
@@ -324,10 +387,31 @@
 		width: 600px;
 	}
 
+	.number_text {
+		width: 40px;
+	}
+
+	.date_text {
+		width: 80px;
+	}
+
 	.warning {
 		color: red;
 		margin-top: 10px;
 		margin-bottom: 30px;
+	}
+
+	.flex-container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.deadline-input {
+		width: 20%;
+	}
+
+	.radio-inputs {
+		width: 80%;
 	}
 
 	@media print {
