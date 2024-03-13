@@ -342,7 +342,7 @@
 				Date: {formatted_today}
 			</div>
 			<div class="inner_flexbox">Earl W. Wiley &ndash; Engineering Assistant</div>
-			<div class="inner_flexbox">FEB 24</div>
+			<div class="inner_flexbox">MAR 24</div>
 		</div>
 		<button type="submit">Print</button>
 	</form>
@@ -452,9 +452,9 @@
 		}
 
 		.print-container {
-			height: 21cm; /* A4 height */
-			width: 21cm; /* A4 width */
-			overflow: hidden;
+			height: 21cm;
+			width: 29cm;
+			/* overflow: hidden; */
 			margin: -1.5rem;
 			padding: 0;
 			box-sizing: border-box;
