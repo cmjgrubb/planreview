@@ -183,7 +183,10 @@
 						</label>
 					</div>
 					<div class="inner_flexbox">
-						<p>Hard copy of the entire approved plan set to the address above.</p>
+						<p>
+							Full-size and half-size hard copies of the entire approved plan set to the address
+							above.
+						</p>
 					</div>
 				</div>
 				<div class="outer_flexbox">
@@ -342,7 +345,7 @@
 				Date: {formatted_today}
 			</div>
 			<div class="inner_flexbox">Earl W. Wiley &ndash; Engineering Assistant</div>
-			<div class="inner_flexbox">MAR 24</div>
+			<div class="inner_flexbox">SEP 24</div>
 		</div>
 		<button type="submit">Print</button>
 	</form>
