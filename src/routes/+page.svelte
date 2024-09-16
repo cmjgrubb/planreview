@@ -184,8 +184,8 @@
 					</div>
 					<div class="inner_flexbox">
 						<p>
-							Full-size and half-size hard copies of the entire approved plan set to the address
-							above.
+							(1) full-size and (1) half-size hard copies of the entire approved plan set to the
+							address above.
 						</p>
 					</div>
 				</div>
