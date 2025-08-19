@@ -336,8 +336,10 @@
 		</div>
 
 		<p class="warning">
-			Work cannot commence that would connect to FW facilities or require FW inspections until the
-			contract, as applicable and sent to owner under separate cover, is returned to this office.
+			WORK INVOLVING THE CONNECTION TO OR INSTALLATION OF FREDERICK WATER FACILITIES, OR ANY
+			ACTIVITY REQUIRING FREDERICK WATER INSPECTIONS, CANNOT BEGIN UNTIL THE DRAWINGS, OFF-SITE
+			EASEMENT (IF REQUIRED), AND CONTRACT (IF REQUIRED)—SENT SEPARATELY TO THE OWNER—HAVE BEEN
+			RETURNED TO THIS OFFICE
 		</p>
 
 		<div class="outer_flexbox">
@@ -345,7 +347,7 @@
 				Date: {formatted_today}
 			</div>
 			<div class="inner_flexbox">Earl W. Wiley &ndash; Engineering Assistant</div>
-			<div class="inner_flexbox">SEP 24</div>
+			<div class="inner_flexbox">AUG 25</div>
 		</div>
 		<button type="submit">Print</button>
 	</form>
